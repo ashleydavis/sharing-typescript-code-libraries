@@ -8,11 +8,11 @@ The `my-project` directory contains a Node.js microservice.
 
 The `libs` directory is the place were we'll keep our reusable TypeScript libraries that we would like to use between multiple Node.js microservices. This directory contains one TypeScript library imaginatively named `my-library`.
 
-`my-project` depends in the library `libs/my-library` using TypeScript project references.
+`my-project` depends on `libs/my-library` using TypeScript project references.
 
-You could have other TypeScript libraries under `libs` and share them among multiple Node.js projects.
+You could have other TypeScript libraries under `libs` and share them among multiple Node.js microservices.
 
-# Running the project
+# Running the application
 
 ## Building the Docker image
 

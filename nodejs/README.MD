@@ -2,45 +2,30 @@
 
 This directory contains an example Node.js project that imports code from a separate TypeScript project.
 
-The `my-project` directory contains a Node.js main project that would like to use shared TypeScript libraries.
+The `my-project` directory contains a Node.js main project that we would like to use shared TypeScript libraries.
 
 The `libs` directory is the place were we'll keep our reusable TypeScript libraries that we would like to use between multiple Node.js projects. This directory contains one TypeScript library imaginatively named `my-library`.
 
 
-`my-project` depends in the library `libs/my-library` using TypeScript project references.
+`my-project` depends on `libs/my-library` using TypeScript project references.
 
 You could have other TypeScript libraries under `libs` and share them among multiple Node.js projects.
 
-# Running the project
+# Running the application
 
-## First build `my-library`
-
-Before running the `main` project you need to build `my-library` as follows.
-
-```bash
-cd libs
-cd my-library
-npm install     # One time dependency installation.
-npx tsc         # Run the TypeScript compiler.
-cd ..
-cd ..           # Return to parent directory.
-```
-
-The TypeScript code is compiled to JavaScript code in the `dist` directory.
-
-## Build `my-project`
-
-Now you can build `my-project` that depends on `my-library`:
+## First build the main project
 
 ```bash
 cd my-project
-npm install     # One time dependency installation.
-npx tsc         # Run the TypeScript compiler.
+npm install         # One time dependency installation.
+npx tsc --build     # Run the TypeScript compiler.
 ```
 
-The TypeScript code is compiled to JavaScript code in the `dist` directory.
+The TypeScript code is compiled to JavaScript code in the `dist` directory for `my-project` and `my-library`.
 
-## Run the code
+Note the use of the `--build` argument, this causes all referenced projects to build along with the main project.
+
+## Now run the code
 
 Now you can run the compiled JavaScript code:
 
