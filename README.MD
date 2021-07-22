@@ -16,5 +16,7 @@ The `nodejs` subdirectory shows the most basic example of sharing a TypeScript c
 
 The `microservices` subdirectory shows how to share a TypeScript code library into a Docker image. This is useful when we have an application composed of multiple TypeScript microservices and we'd like to share code libraries between them.
 
+The microservices example uses [ts-project-bundle](https://github.com/ashleydavis/ts-project-bundle) to bundle the TypeScript project and its libraries ready to be included in the Docker image.
+
 Stay tuned. An example is coming soon to show how to share code between a TypeScript microservice and a TypeScript frontend!
 
