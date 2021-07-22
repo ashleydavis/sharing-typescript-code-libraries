@@ -4,22 +4,20 @@
 FROM node:14-alpine as builder
 
 #
-# Set the working directory for the libraries.
+# Set the working directory for the entire project.
 #
 WORKDIR /usr/src
 
-# Copy library code.
-COPY ./libs ./libs
-
 #
-# Set the working directory for the microservice.
+# Copy microservices and library code.
+# In a bigger project this copies more than is needed, but at least it's simple.
 #
-WORKDIR /usr/src/app
+COPY ./ ./
 
-# Copy microservice source code.
-COPY ./my-project/package*.json ./
-COPY ./my-project/tsconfig.json ./      
-COPY ./my-project/src ./src             
+# 
+# Set the working directory for the particular microservice.
+#
+WORKDIR /usr/src/my-project
 
 # Install dependencies
 RUN npm install                         
@@ -28,20 +26,27 @@ RUN npm install
 RUN npm run build
 
 #
+# Set the working directory to the bundle directory.
+#
+WORKDIR /usr/src/my-project/bundle
+
+#
+# Recursively install dependencies for the microservice and all the libraries.
+#
+RUN npm install -g recursive-install
+RUN npm-recursive-install --production
+
+#
 # The prod image.
-##
+#
 FROM node:14-alpine
 
-WORKDIR /usr/src
-
-# Copy compiled library code.
-# TODO: This could be specific to the library dist.
-# TODO: Some sort of templating would be good here to generate a copy for each library.
-COPY --from=builder /usr/src/libs ./libs
-
 WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/dist ./dist
-COPY ./my-project/package*.json ./
-RUN npm install --only=production
+
+# Copy the bundle from the builder image.
+COPY --from=builder /usr/src/my-project/build ./
+
+WORKDIR /usr/src/app/my-project
+    
 EXPOSE 80
 CMD npm start

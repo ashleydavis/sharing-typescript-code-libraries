@@ -10,9 +10,9 @@ Often though we'll want to share TypeScript code between just a couple of projec
 
 Luckily we can share TypeScript code more directly using [TypeScript project references](https://www.typescriptlang.org/docs/handbook/project-references.html).
 
-This repos contains some examples of doing that.
+This repo contains some examples of doing that.
 
-The `nodejs` subdirectory shows how to share a TypeScript code library into TypeScript Node.js application. This is as simple as it gets.
+The `nodejs` subdirectory shows the most basic example of sharing a TypeScript code library into TypeScript Node.js application using TypeScript project references. This is as simple as it gets.
 
 The `microservices` subdirectory shows how to share a TypeScript code library into a Docker image. This is useful when we have an application composed of multiple TypeScript microservices and we'd like to share code libraries between them.
 
