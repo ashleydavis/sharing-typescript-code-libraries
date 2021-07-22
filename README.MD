@@ -20,3 +20,4 @@ The microservices example uses [ts-project-bundle](https://github.com/ashleydavi
 
 Stay tuned. An example is coming soon to show how to share code between a TypeScript microservice and a TypeScript frontend!
 
+[Follow the developer for updates](https://twitter.com/ashleydavis75).
