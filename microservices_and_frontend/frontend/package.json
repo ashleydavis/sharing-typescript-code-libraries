@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel index.html --out-dir=out"
+    "start": "npm run compile && parcel index.html",
+    "build": "npm run compile && parcel build index.html --out-dir=out",
+    "compile": "npx tsc --build"
   },
   "keywords": [],
   "author": "",
