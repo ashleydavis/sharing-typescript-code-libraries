@@ -3,3 +3,5 @@ dist/
 tsconfig.tsbuildinfo
 todo.txt
 microservices/my-project/build/
+microservices_and_frontend/frontend/.cache/
+microservices_and_frontend/frontend/out/
