@@ -17,7 +17,7 @@ COPY ./ ./
 # 
 # Set the working directory for the particular microservice.
 #
-WORKDIR /usr/src/my-project
+WORKDIR /usr/src/backend/my-project
 
 # Install dependencies
 RUN npm install                         
@@ -26,12 +26,12 @@ RUN npm install
 RUN npm run build
 
 #
-# Set the working directory to the build directory.
+# Set the working directory to the bundle directory.
 #
-WORKDIR /usr/src/my-project/build
+WORKDIR /usr/src/backend/my-project/build
 
 #
-# Recursively install prod dependencies for the bundle.
+# Recursively install dependencies for the microservice and all the libraries.
 #
 RUN npm install -g recursive-install
 RUN npm-recursive-install --production
@@ -44,9 +44,9 @@ FROM node:14-alpine
 WORKDIR /usr/src/app
 
 # Copy the bundle from the builder image.
-COPY --from=builder /usr/src/my-project/build ./
+COPY --from=builder /usr/src/backend/my-project/build ./
 
-WORKDIR /usr/src/app/my-project
+WORKDIR /usr/src/app/backend/my-project
     
 EXPOSE 80
 CMD npm start

@@ -1,3 +1,5 @@
 node_modules/
 dist/
 tsconfig.tsbuildinfo
+todo.txt
+microservices/my-project/build/
