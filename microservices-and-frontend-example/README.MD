@@ -1,18 +1,13 @@
-# Example Node.js microservice that shares a TypeScript project
+# Example of sharing a TypeScript library between a microservice and a frontend
 
-This directory contains an example Node.js microservice that imports code from a separate TypeScript project.
+This directory shows an example backend and a frontend that share a TypeScript project.
 
-This is the same as the code in `..\nodejs`, except in this example we add a Dockerfile that is used to build a Docker image that contains the code for the TypeScript application and the TypeScript library that it depends on. 
+The microservice under the `backend` directory is essentially the same as in the `microservices-example`.
 
-The `my-project` directory contains a Node.js microservice.
+This example adds a React-based TypeScript frontend under the `frontend` subdirectory.
 
-The `libs` directory is the place were we'll keep our reusable TypeScript libraries that we would like to use between multiple Node.js microservices. This directory contains one TypeScript library imaginatively named `my-library`.
+The library `my-library` under the `libs` subdirectory is shared between the backend and the frontend, again we are using TypeScript project references.
 
-`my-project` depends on `libs/my-library` using TypeScript project references.
-
-You could have other TypeScript libraries under `libs` and share them among multiple Node.js microservices.
-
-Please read through the file at `./my-project/Dockerfile`, it is well commented and shows the use of (`ts-project-bundle`)[https://github.com/ashleydavis/ts-project-bundle] to bundle the TypeScript project and its libraries. 
 # Running the application
 
 ## Building the Docker image
@@ -39,3 +34,19 @@ docker run --rm -it hello-world sh
 ```bash
 docker run hello-world
 ```
+
+## Running the frontend in development
+
+```bash
+cd frontend
+npm start
+```
+
+## Building the frontend for production
+
+```bash
+cd frontend
+npm run build
+```
+
+Please checkout `frontend/package.json` and you'll see how we run `tsc --build` to build the shared libraries before invoking Parcel to bundle the frontend. 
