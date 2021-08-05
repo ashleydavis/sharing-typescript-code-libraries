@@ -8,6 +8,12 @@ This example adds a React-based TypeScript frontend under the `frontend` subdire
 
 The library `my-library` under the `libs` subdirectory is shared between the backend and the frontend, again we are using TypeScript project references.
 
+# Project structure
+
+This diagram illustrates the basic structure of this project:
+
+![Project structure](./../images/Backend%20and%20frontend%20example.png)
+
 # Running the application
 
 ## Building the Docker image

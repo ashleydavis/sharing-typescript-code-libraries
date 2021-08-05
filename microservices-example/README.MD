@@ -13,6 +13,12 @@ The `libs` directory is the place were we'll keep our reusable TypeScript librar
 You could have other TypeScript libraries under `libs` and share them among multiple Node.js microservices.
 
 Please read through the file at `./my-project/Dockerfile`, it is well commented and shows the use of (`ts-project-bundle`)[https://github.com/ashleydavis/ts-project-bundle] to bundle the TypeScript project and its libraries. 
+# Project structure
+
+This diagram illustrates the basic structure of this project:
+
+![Project structure](./../images/Microservices%20example.png)
+
 # Running the application
 
 ## Building the Docker image

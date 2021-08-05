@@ -6,10 +6,15 @@ The `my-project` directory contains a Node.js main project that we would like to
 
 The `libs` directory is the place were we'll keep our reusable TypeScript libraries that we would like to use between multiple Node.js projects. This directory contains one TypeScript library imaginatively named `my-library`.
 
-
 `my-project` depends on `libs/my-library` using TypeScript project references.
 
 You could have other TypeScript libraries under `libs` and share them among multiple Node.js projects.
+
+# Project structure
+
+This diagram illustrates the basic structure of this project:
+
+![Project structure](./../images/Node.js%20example.png)
 
 # Running the application
 

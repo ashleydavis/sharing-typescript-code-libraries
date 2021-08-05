@@ -12,13 +12,13 @@ Luckily we can share TypeScript code more directly using [TypeScript project ref
 
 This repo contains some examples of doing that.
 
-The `nodejs-example` subdirectory shows the most basic example of sharing a TypeScript code library into TypeScript Node.js application using TypeScript project references. This is as simple as it gets.
+[The nodejs-example subdirectory](./nodejs-example) shows the most basic example of sharing a TypeScript code library into TypeScript Node.js application using TypeScript project references. This is as simple as it gets.
 
-The `microservices-example` subdirectory shows how to share a TypeScript code library into a Docker image. This is useful when we have an application composed of multiple TypeScript microservices and we'd like to share code libraries between them.
+[The microservices-example subdirectory](./microservices-example) shows how to share a TypeScript code library into a Docker image. This is useful when we have an application composed of multiple TypeScript microservices and we'd like to share code libraries between them.
 
 The microservices example uses [ts-project-bundle](https://github.com/ashleydavis/ts-project-bundle) to bundle the TypeScript project and its libraries ready to be included in the Docker image.
 
-The `microservices-and-front-example` subdirectory shows how to share a TypeSript code library between a Docker image and a React frontend.
+[The microservices-and-front-example subdirectory](./microservices-and-frontend-example) shows how to share a TypeSript code library between a Docker image and a React frontend.
 
 Stay tuned -- a live stream or blog post about this will be announce soon!
 
