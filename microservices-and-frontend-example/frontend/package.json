@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run compile && parcel index.html",
     "build": "npm run compile && parcel build index.html --out-dir=out",
-    "compile": "npx tsc --build"
+    "compile": "tsc --build"
   },
   "keywords": [],
   "author": "",
