@@ -2,6 +2,8 @@
 
 This repo contains examples of sharing TypeScript code between projects.
 
+If you like this project, please star this repo and [support my work](https://www.codecapers.com.au/about#support-my-work)
+
 You can watch the video here: https://www.youtube.com/watch?v=y76n6Ow83YQ
 
 Of course you can share a TypeScript code library by publishing it (publicly or privately) to the npm registry and installing it using the `npm` command.
