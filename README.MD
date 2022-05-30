@@ -26,4 +26,4 @@ The microservices example uses [ts-project-bundle](https://github.com/ashleydavi
 
 Stay tuned -- a live stream or blog post about this will be announce soon!
 
-[Follow the developer for updates](https://twitter.com/ashleydavis75).
+[Follow the developer for updates](https://twitter.com/codecapers).
